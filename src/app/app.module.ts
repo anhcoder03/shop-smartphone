@@ -9,12 +9,14 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { DashboardHeaderComponent } from './components/dashboard/dashboard-header/dashboard-header.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
-import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { ProductListComponent } from './modules/product/product-list/product-list.component';
-import { ProductAddComponent } from './modules/product/product-add/product-add.component';
-import { ProductUpdateComponent } from './modules/product/product-update/product-update.component';
+
+import { DashboardSidebarComponent } from './components/dashboard/dashboard-sidebar/dashboard-sidebar.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ListCategoryComponent } from './modules/category/list-category/list-category.component';
+import { ListProductComponent } from './modules/product/list-product/list-product.component';
+import { AddProductComponent } from './modules/product/add-product/add-product.component';
+import { AddCategoryComponent } from './modules/category/add-category/add-category.component';
+
 
 @NgModule({
   declarations: [
@@ -25,12 +27,12 @@ import { ProductUpdateComponent } from './modules/product/product-update/product
     ClientLayoutComponent,
     HomepageComponent,
     DashboardHeaderComponent,
-    ProductPageComponent,
-    ProductDetailComponent,
+    DashboardSidebarComponent,
     DashboardComponent,
-    ProductListComponent,
-    ProductAddComponent,
-    ProductUpdateComponent
+    ListCategoryComponent,
+    ListProductComponent,
+    AddProductComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,

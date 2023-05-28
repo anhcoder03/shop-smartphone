@@ -1,59 +1,9 @@
-<div class="bg-slate-50 block h-[700px]">
-  <div class="w-[1450px] mx-auto">
-    <div class=" grid grid-cols-[300px,auto] gap-12">
-      <!-- ----------------------------------------HEADER -->
-      <header class="bg-white">
-
-        <nav class="fixed">
-          <ul class="">
-            <li><a
-                class="grid grid-cols-[40px,auto] w-full px-10 py-3 hover:bg-indigo-400 hover:rounded-xl hover:text-white transition-all deley-100"
-                href="index.html"><i class="fa-solid fa-house mt-3"></i>
-                <h1 class=" text-[25px]">Dashboard</h1>
-              </a></li>
-            <li><a
-                class="grid grid-cols-[40px,auto] w-full px-10 py-3 hover:bg-indigo-400 hover:rounded-xl hover:text-white transition-all deley-100"
-                href="./category.html"><i class="fa-solid fa-plus mt-3"></i>
-                <h1 class=" text-[25px]">Category</h1>
-              </a></li>
-            <li><a
-                class="grid grid-cols-[40px,auto] w-full px-10 py-3 hover:bg-indigo-400 hover:rounded-xl hover:text-white transition-all deley-100"
-                href="projects.html"><i class="fa-brands fa-r-project mt-3"></i>
-                <h1 class=" text-[25px]">Projects</h1>
-              </a></li>
-            <li><a
-                class="grid grid-cols-[40px,auto] w-full px-10 py-3 hover:bg-indigo-400 hover:rounded-xl hover:text-white transition-all deley-100"
-                href="./account-list.html"><i class="fa-solid fa-user mt-3"></i>
-                <h1 class=" text-[25px]">Accounts</h1>
-              </a></li>
-            <li><a
-                class="grid grid-cols-[40px,auto] w-full px-10 py-3 hover:bg-indigo-400 hover:rounded-xl hover:text-white transition-all deley-100"
-                href="./comment.html"><i class="fa-solid fa-comment mt-3"></i>
-                <h1 class=" text-[25px]">Comment</h1>
-              </a></li>
-            <li><a
-                class="grid grid-cols-[40px,auto] w-full px-10 py-3 hover:bg-indigo-400 hover:rounded-xl hover:text-white transition-all deley-100"
-                href="./Statistical.html"><i class="fa-solid fa-chart-simple mt-3"></i>
-                <h1 class=" text-[25px]">Statistical</h1>
-              </a></li>
-          </ul>
-        </nav>
-      </header>
-      <!-- -----------------------------------------FOOTER -->
-      <section>
-        <div class=" flex justify-between">
-          <div class="flex items-center">
-            <input type="text" placeholder="Nhập từ khóa tìm kiếm"
-              class="py-2 px-4 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
-            <button
-              class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">Tìm
-              kiếm</button>
-          </div>
-        </div>
-        <main>
-          <router-outlet></router-outlet>
-        </main>
-      </section>
+<div class="dashboard-wrapper">
+  <app-dashboard-header></app-dashboard-header>
+  <div class="dashboard-main">
+    <app-dashboard-sidebar></app-dashboard-sidebar>
+    <div class="dashboard-children">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
