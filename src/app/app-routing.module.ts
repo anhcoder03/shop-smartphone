@@ -6,8 +6,22 @@ import { ListCategoryComponent } from './modules/category/list-category/list-cat
 import { ListProductComponent } from './modules/product/list-product/list-product.component';
 import { AddProductComponent } from './modules/product/add-product/add-product.component';
 import { AddCategoryComponent } from './modules/category/add-category/add-category.component';
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: ClientLayoutComponent,
+    children: [
+      { path: '', component: HomepageComponent },
+      { path: 'product', component: ProductPageComponent },
+      { path: 'product/:id', component: ProductDetailComponent },
+    ],
+  },
   {
     path: 'admin',
     component: AdminLayoutComponent,
@@ -30,6 +44,7 @@ const routes: Routes = [
       },
     ],
   },
+  { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
