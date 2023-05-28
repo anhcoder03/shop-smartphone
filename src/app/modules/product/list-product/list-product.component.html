@@ -1,37 +1,53 @@
-<!-- -----------------------------------------CONTENT -->
-<section class="box">
-  <div class="title flex align-center">
-    <h1 class="font-bold text-[30px] ">List Projects</h1>
-    <form class="ml-6">
-      <input type="text" class="border px-3 py-2 rounded-md outline-none" placeholder="Mời bạn nhập project muốn tìm">
-      <button class="bg-blue-500 px-3 py-2 rounded-md text-white hover:bg-blue-600 deley-100">Search</button>
-    </form>
+<div class="mb-10">
+  <div class="flex items-center justify-between">
+    <div><h1 class="text-3xl font-bold">Danh sách sản phẩm</h1></div>
+    <div>
+      <a
+        routerLink="/admin/product/add"
+        class="block px-5 py-3 text-white bg-blue-500 rounded-lg hover:bg-blue-400"
+        >Thêm sản phẩm</a
+      >
+    </div>
   </div>
-  <table class="border w-full mb-4">
+</div>
+<div class="table-wrapper">
+  <table>
     <thead>
-      <tr class="border bg-indigo-300 text-[18px] ">
-        <th class="border py-4">Id</th>
-        <th class="border">Tên Project</th>
-        <th class="border ">Giá Project</th>
-        <th class="border ">Mô tả</th>
-        <th class="border"></th>
+      <tr>
+        <th>STT</th>
+        <th>Ảnh</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="py-4 text-[18px]">
-        <td class="border text-center py-3">1</td>
-        <td class="border px-5 ">Dự án 1</td>
-        <td class="border text-center ">20000 đ</td>
-        <td class="border px-5 ">Chất</td>
-        <td class="border text-center">
-          <a class="bg-red-500 px-3 py-2 rounded-md text-white hover:bg-red-600 deley-100" href="">Xóa</a>
-          <a class="bg-green-500 px-3 py-2 rounded-md text-white hover:bg-green-600 deley-100" href="">Sửa</a>
+      <tr class="py-3">
+        <td>1</td>
+        <td>
+          <img
+            class="w-[60px] h-[80px] object-cover"
+            src="https://images.unsplash.com/photo-1685114139619-540ec96ff5fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+        </td>
+        <td class="flex-1 min-w-[300px]">Dự án 1</td>
+        <td class="text-gray-400">
+          <em class="text-red-500">28.990.000 đ</em>
+        </td>
+        <td>
+          <div class="flex items-center text-white gap-x-4">
+            <button class="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-400">
+              <i class="fa fa-trash"></i>
+            </button>
+            <a
+              class="px-3 py-2 text-white bg-gray-500 rounded-md hover:bg-green-600 deley-100"
+              routerLink=""
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
-  <form>
-    <a routerLink="/admin/product/add"
-      class="bg-slate-500 px-3 py-2 rounded-md text-white hover:bg-slate-600 deley-100">Thêm mới</a>
-  </form>
-</section>
+</div>
