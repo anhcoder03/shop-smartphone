@@ -21,23 +21,25 @@
         <th>Actions</th>
       </tr>
     </thead>
-    <tbody>
-      <tr class="py-3">
-        <td>1</td>
+    <tbody *ngIf="products && products.length">
+      <tr class="py-3" *ngFor="let product of products; index as i">
+        <td>{{ i + 1 }}</td>
         <td>
           <img
+            src="{{ product.image }}"
             class="w-[60px] h-[80px] object-cover"
-            src="https://images.unsplash.com/photo-1685114139619-540ec96ff5fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            alt=""
           />
         </td>
-        <td class="flex-1 min-w-[300px]">Dự án 1</td>
+        <td class="flex-1 min-w-[300px]">{{ product.productName }}</td>
         <td class="text-gray-400">
-          <em class="text-red-500">28.990.000 đ</em>
+          <em class="text-red-500">{{ formatPrice(product.price) }}đ</em>
         </td>
         <td>
           <div class="flex items-center text-white gap-x-4">
-            <button class="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-400">
+            <button
+              class="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-400"
+              (click)="onhandleremove(product._id)"
+            >
               <i class="fa fa-trash"></i>
             </button>
             <a
