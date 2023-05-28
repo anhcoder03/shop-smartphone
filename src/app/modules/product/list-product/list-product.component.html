@@ -1,0 +1,53 @@
+<div class="mb-10">
+  <div class="flex items-center justify-between">
+    <div><h1 class="text-3xl font-bold">Danh sách sản phẩm</h1></div>
+    <div>
+      <a
+        routerLink="/admin/product/add"
+        class="block px-5 py-3 text-white bg-blue-500 rounded-lg hover:bg-blue-400"
+        >Thêm sản phẩm</a
+      >
+    </div>
+  </div>
+</div>
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Ảnh</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="py-3">
+        <td>1</td>
+        <td>
+          <img
+            class="w-[60px] h-[80px] object-cover"
+            src="https://images.unsplash.com/photo-1685114139619-540ec96ff5fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+        </td>
+        <td class="flex-1 min-w-[300px]">Dự án 1</td>
+        <td class="text-gray-400">
+          <em class="text-red-500">28.990.000 đ</em>
+        </td>
+        <td>
+          <div class="flex items-center text-white gap-x-4">
+            <button class="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-400">
+              <i class="fa fa-trash"></i>
+            </button>
+            <a
+              class="px-3 py-2 text-white bg-gray-500 rounded-md hover:bg-green-600 deley-100"
+              routerLink=""
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
