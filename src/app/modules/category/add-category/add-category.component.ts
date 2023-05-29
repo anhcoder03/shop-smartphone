@@ -26,13 +26,16 @@ export class AddCategoryComponent {
     const category: any = {
       name: this.categoryForm.value.name || '',
     };
-    this.categoryService.addCategory(category).subscribe((data) => {
-      if (data.success) {
-        this.toastr.success(data.message);
-      } else {
-        this.toastr.error(data.message);
+    this.categoryService.addCategory(category).subscribe(
+      (data) => {
+        if (data.success) {
+          this.toastr.success(data.message);
+        }
+        this.router.navigateByUrl('/admin/category');
+      },
+      (error) => {
+        this.toastr.warning(error.error.message);
       }
-      this.router.navigateByUrl('/admin/category');
-    });
+    );
   }
 }
