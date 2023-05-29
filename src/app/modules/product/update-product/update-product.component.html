@@ -1,6 +1,6 @@
 <div class="mb-10">
   <div class="flex items-center justify-between">
-    <div><h1 class="text-3xl font-bold">Thêm sản phẩm</h1></div>
+    <div><h1 class="text-3xl font-bold">Update sản phẩm</h1></div>
     <div>
       <a
         routerLink="/admin/product"
@@ -18,7 +18,6 @@
           <label for="productName">Tên sản phẩm</label>
           <input
             type="text"
-            id="productName"
             formControlName="productName"
 
             placeholder="Tên sản phẩm"
@@ -129,7 +128,7 @@
       <button type="submit" [disabled]="!productForm.valid"
         class="w-[250px] bg-green-500 font-medium text-xl text-white mt-5 rounded-lg py-5 h-[60px] flex items-center justify-center mx-auto"
       >
-        Thêm sản phẩm
+        Update Sản phẩm
       </button>
     </form>
   </div>
