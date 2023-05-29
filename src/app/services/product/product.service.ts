@@ -24,8 +24,14 @@ export class ProductService {
     return this.http.get(`${this.Api_Url}/get-all-category`);
   }
   UpdateProduct(product: IProduct): Observable<IData> {
-    return this.http.put<IData>(
-      `${this.Api_Url}/update-category/${product._id}`,
+    return this.http.put(
+      `${this.Api_Url}/update-product/${product._id}`,
+      product
+    );
+  }
+  updateProduct(product: IProduct): Observable<IProduct> {
+    return this.http.put<IProduct>(
+      `${this.Api_Url}/update-product/${product._id}`,
       product
     );
   }

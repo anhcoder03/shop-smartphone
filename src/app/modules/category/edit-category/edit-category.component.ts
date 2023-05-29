@@ -46,9 +46,7 @@ export class EditCategoryComponent {
       _id: this.category._id,
       name: this.categoryForm.value.name || '',
     };
-    console.log('oas', this.categoryForm.value);
     this.categoryService.updateCategory(category).subscribe((data) => {
-      console.log('ok', data);
       if (data.success) {
         this.toastr.success(data.message);
       } else {

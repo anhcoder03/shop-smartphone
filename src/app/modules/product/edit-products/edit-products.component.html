@@ -12,7 +12,7 @@
 </div>
 <div>
   <div class="">
-    <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+    <form [formGroup]="productForm" (ngSubmit)="handleUpdateProduct()">
       <div class="form-layout">
         <div class="form-group">
           <label for="productName">Tên sản phẩm</label>
@@ -65,7 +65,7 @@
             />
             <div
               class="flex flex-col items-center text-center pointer-events-none"
-              *ngIf="image.length <= 0"
+              *ngIf="!image.url"
             >
               <img
                 src="https://book-wine.vercel.app/img-upload.png"
@@ -85,7 +85,7 @@
               type="button"
               *ngIf="image.url"
               class="absolute z-10 flex items-center justify-center invisible w-16 h-16 text-red-500 transition-all bg-white rounded-full opacity-0 cursor-pointer group-hover:opacity-100 group-hover:visible"
-              (click)="handleDeteleImage(image.publicId)"
+              (click)="handleDeteleImage()"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

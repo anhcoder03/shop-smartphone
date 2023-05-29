@@ -5,6 +5,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { UploadImageService } from 'src/app/services/uploadImage/upload-image.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CategoryService } from 'src/app/services/category/category.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-product',
@@ -29,7 +30,8 @@ export class AddProductComponent {
     private uploadImageService: UploadImageService,
     private productService: ProductService,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
   handleSelectImage = (e: any) => {
     const files = e.target.files;
@@ -85,8 +87,12 @@ export class AddProductComponent {
       categoryId: this.productForm.value.categoryId || '',
     };
 
-    this.productService.addProduct(products).subscribe(() => {
-      alert('Thêm thành công ');
+    this.productService.addProduct(products).subscribe((data) => {
+      if (data.success) {
+        this.toastr.success(data.message);
+      } else {
+        this.toastr.error(data.message);
+      }
       this.router.navigateByUrl('/admin/product');
     });
   }
