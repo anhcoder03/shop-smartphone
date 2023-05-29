@@ -34,7 +34,7 @@ const routes: Routes = [
         children: [
           { path: '', component: ListCategoryComponent },
           { path: 'add', component: AddCategoryComponent },
-          { path: 'edit', component: EditCategoryComponent },
+          { path: ':id/edit', component: EditCategoryComponent },
         ],
       },
       {
