@@ -12,6 +12,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { EditCategoryComponent } from './modules/category/edit-category/edit-category.component';
+import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
         children: [
           { path: '', component: ListProductComponent },
           { path: 'add', component: AddProductComponent },
+          { path: ':id/edit', component: EditProductsComponent },
         ],
       },
     ],

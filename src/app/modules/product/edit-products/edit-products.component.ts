@@ -1,36 +1,55 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from 'src/app/interface/product';
 import { ProductService } from 'src/app/services/product/product.service';
 import { UploadImageService } from 'src/app/services/uploadImage/upload-image.service';
-import { FormBuilder, Validators } from '@angular/forms';
-import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.scss'],
+  selector: 'app-edit-products',
+  templateUrl: './edit-products.component.html',
+  styleUrls: ['./edit-products.component.scss'],
 })
-export class AddProductComponent {
+export class EditProductsComponent {
   image: any = [];
   listImage: any = [];
   categories: any = [];
-  data: any;
-
+  product: any = {
+    productName: '',
+    price: 0,
+    image: '',
+    description: '',
+    categoryId: '',
+  };
   productForm = this.formBuilder.group({
     productName: ['', [Validators.required]],
     price: [0],
     image: [''],
-    description: ['', Validators.required],
+    description: ['', [Validators.required]],
     categoryId: [''],
   });
   constructor(
     private formBuilder: FormBuilder,
     private uploadImageService: UploadImageService,
     private productService: ProductService,
-    private categoryService: CategoryService,
+    private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    this.route.paramMap.subscribe((param) => {
+      const _id = String(param.get('id'));
+      this.productService.getOneproduct(_id).subscribe((data) => {
+        this.product = data.data;
+        console.log(data.data);
+
+        this.productForm.patchValue({
+          categoryId: this.product.categoryId,
+          productName: this.product.productName,
+          price: this.product.price,
+          image: this.product.image,
+          description: this.product.description,
+        });
+      });
+    });
+  }
   handleSelectImage = (e: any) => {
     const files = e.target.files;
     if (files.length === 0) {
@@ -61,19 +80,12 @@ export class AddProductComponent {
     this.getcategories();
   }
   getcategories() {
-    this.categoryService.getAllCategory().subscribe((data) => {
-      this.data = data;
-      this.categories = this.data.data;
+    this.productService.getAllcategories().subscribe((data) => {
+      this.categories = data.data as any[];
       console.log(this.categories);
     });
   }
   onHandleSubmit() {
-    // console.log(this.products)
-
-    // this.productService.addProduct(this.products).subscribe((data)=>{
-    //   alert("thêm thành công "),
-    //   this.ruoter.navigateByUrl('/admin/product')
-    // })
     if (this.productForm.invalid) {
       return;
     }
@@ -85,12 +97,12 @@ export class AddProductComponent {
       categoryId: this.productForm.value.categoryId || '',
     };
 
-    this.productService.addProduct(products).subscribe(() => {
+    this.productService.UpdateProduct(products).subscribe(() => {
       alert('Thêm thành công ');
-      this.router.navigateByUrl('/admin/product');
     });
   }
 }
+
 type Data = {
   success?: boolean;
   message?: string;
