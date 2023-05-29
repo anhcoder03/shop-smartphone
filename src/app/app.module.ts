@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/common/header/header.component';
@@ -19,6 +21,7 @@ import { ListCategoryComponent } from './modules/category/list-category/list-cat
 import { ListProductComponent } from './modules/product/list-product/list-product.component';
 import { AddProductComponent } from './modules/product/add-product/add-product.component';
 import { AddCategoryComponent } from './modules/category/add-category/add-category.component';
+import { EditCategoryComponent } from './modules/category/edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +38,14 @@ import { AddCategoryComponent } from './modules/category/add-category/add-catego
     ListProductComponent,
     AddProductComponent,
     AddCategoryComponent,
+    EditCategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],

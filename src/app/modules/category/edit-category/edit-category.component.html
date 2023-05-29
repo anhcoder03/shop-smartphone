@@ -1,6 +1,6 @@
 <div class="mb-10">
   <div class="flex items-center justify-between">
-    <div><h1 class="text-3xl font-bold">Tạo danh mục</h1></div>
+    <div><h1 class="text-3xl font-bold">Sửa danh mục</h1></div>
     <div>
       <a
         routerLink="/admin/category"
@@ -15,14 +15,14 @@
     <form
       action=""
       class="w-[500px]"
-      (ngSubmit)="onHandleSubmit()"
+      (ngSubmit)="handleUpdateCategorySubmit()"
       [formGroup]="categoryForm"
     >
       <div class="form-group">
         <label for="category">Tên danh mục</label>
         <input
           type="text"
-          name="categoryName"
+          name="name"
           formControlName="name"
           id="category"
           placeholder="Nhập tên danh mục"
@@ -33,7 +33,7 @@
         class="w-[200px] bg-green-500 font-medium text-xl text-white mt-5 rounded-lg py-5 h-[60px] flex items-center justify-center mx-auto"
         [disabled]="!categoryForm.valid"
       >
-        Thêm danh mục
+        Cập nhật danh mục
       </button>
     </form>
   </div>
