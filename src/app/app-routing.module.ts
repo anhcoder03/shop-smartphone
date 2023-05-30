@@ -14,6 +14,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { EditCategoryComponent } from './modules/category/edit-category/edit-category.component';
 import { SigninComponent } from './pages/accounts/signin/signin.component';
 import { SignupComponent } from './pages/accounts/signup/signup.component';
+import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
         children: [
           { path: '', component: ListProductComponent },
           { path: 'add', component: AddProductComponent },
+          { path: ':id/edit', component: EditProductsComponent },
         ],
       },
     ],

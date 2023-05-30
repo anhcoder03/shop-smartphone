@@ -12,7 +12,7 @@
 </div>
 <div>
   <div class="">
-    <form  [formGroup]="productForm" (ngSubmit)="onHandleSubmit()" >
+    <form [formGroup]="productForm" (ngSubmit)="handleUpdateProduct()">
       <div class="form-layout">
         <div class="form-group">
           <label for="productName">Tên sản phẩm</label>
@@ -20,7 +20,6 @@
             type="text"
             id="productName"
             formControlName="productName"
-
             placeholder="Tên sản phẩm"
             class="w-full px-3 py-4 border rounded-lg outline-none bg-slate-200 focus:bg-white focus:border-red-400"
           />
@@ -28,16 +27,15 @@
         <div class="form-group">
           <label for="category">Danh mục</label>
           <select
-          formControlName="categoryId"
-
-          class="w-full px-3 py-4 border rounded-lg outline-none bg-slate-200 focus:bg-white focus:border-red-400"
-        >
-          <option value="">Chọn danh mục</option>
-          <!-- Loop through categories and populate options -->
-          <ng-container *ngFor="let category of categories">
-            <option [value]="category._id">{{ category.name }}</option>
-          </ng-container>
-        </select>
+            formControlName="categoryId"
+            class="w-full px-3 py-4 border rounded-lg outline-none bg-slate-200 focus:bg-white focus:border-red-400"
+          >
+            <option value="">Chọn danh mục</option>
+            <!-- Loop through categories and populate options -->
+            <ng-container *ngFor="let category of categories">
+              <option [value]="category._id">{{ category.name }}</option>
+            </ng-container>
+          </select>
         </div>
       </div>
       <div class="form-layout">
@@ -47,7 +45,6 @@
             type="text"
             id="price"
             formControlName="price"
-
             placeholder="Nhập giá sản phẩm"
             class="w-full px-3 py-4 border rounded-lg outline-none bg-slate-200 focus:bg-white focus:border-red-400"
           />
@@ -68,7 +65,7 @@
             />
             <div
               class="flex flex-col items-center text-center pointer-events-none"
-              *ngIf="image.length <= 0"
+              *ngIf="!image.url"
             >
               <img
                 src="https://book-wine.vercel.app/img-upload.png"
@@ -88,7 +85,7 @@
               type="button"
               *ngIf="image.url"
               class="absolute z-10 flex items-center justify-center invisible w-16 h-16 text-red-500 transition-all bg-white rounded-full opacity-0 cursor-pointer group-hover:opacity-100 group-hover:visible"
-              (click)="handleDeteleImage(image.publicId)"
+              (click)="handleDeteleImage()"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,15 +115,15 @@
       <div class="form-group">
         <label for="description">Mô tả sản phẩm</label>
         <textarea
-
           formControlName="description"
           id="description"
-
           placeholder="Mô tả sản phẩm"
           class="w-full min-h-[200px] px-3 py-4 border rounded-lg outline-none bg-slate-200 focus:bg-white focus:border-red-400"
         ></textarea>
       </div>
-      <button type="submit" [disabled]="!productForm.valid"
+      <button
+        type="submit"
+        [disabled]="!productForm.valid"
         class="w-[250px] bg-green-500 font-medium text-xl text-white mt-5 rounded-lg py-5 h-[60px] flex items-center justify-center mx-auto"
       >
         Thêm sản phẩm

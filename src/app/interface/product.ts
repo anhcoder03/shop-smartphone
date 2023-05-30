@@ -5,4 +5,6 @@ export interface IProduct {
   image: string;
   description: string;
   categoryId: string;
+  success?: boolean;
+  message?: string;
 }
