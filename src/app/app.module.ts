@@ -21,6 +21,8 @@ import { ListProductComponent } from './modules/product/list-product/list-produc
 import { AddProductComponent } from './modules/product/add-product/add-product.component';
 import { AddCategoryComponent } from './modules/category/add-category/add-category.component';
 import { EditCategoryComponent } from './modules/category/edit-category/edit-category.component';
+import { SignupComponent } from './pages/accounts/signup/signup.component';
+import { SigninComponent } from './pages/accounts/signin/signin.component';
 import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
 
 @NgModule({
@@ -39,6 +41,8 @@ import { EditProductsComponent } from './modules/product/edit-products/edit-prod
     AddProductComponent,
     AddCategoryComponent,
     EditCategoryComponent,
+    SignupComponent,
+    SigninComponent,
     EditProductsComponent,
   ],
   imports: [

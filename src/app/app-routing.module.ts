@@ -12,6 +12,8 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { EditCategoryComponent } from './modules/category/edit-category/edit-category.component';
+import { SigninComponent } from './pages/accounts/signin/signin.component';
+import { SignupComponent } from './pages/accounts/signup/signup.component';
 import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
       { path: '', component: HomepageComponent },
       { path: 'product', component: ProductPageComponent },
       { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'signin', component: SigninComponent },
+      { path: 'signup', component: SignupComponent },
     ],
   },
   {
@@ -55,4 +59,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
