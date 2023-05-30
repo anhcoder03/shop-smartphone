@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,12 @@ import { EditCategoryComponent } from './modules/category/edit-category/edit-cat
 import { SignupComponent } from './pages/accounts/signup/signup.component';
 import { SigninComponent } from './pages/accounts/signin/signin.component';
 import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
+import { SliderComponent } from './components/common/slider/slider.component';
+import { MenuComponent } from './components/common/menu/menu.component';
+import { ProductAppleComponent } from './components/product-apple/product-apple.component';
+import { ProductSamsungComponent } from './components/product-samsung/product-samsung.component';
+import { ProductXiaomiOppoComponent } from './components/product-xiaomi-oppo/product-xiaomi-oppo.component';
+import { SocialMediaComponent } from './components/social-media/social-media.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +51,12 @@ import { EditProductsComponent } from './modules/product/edit-products/edit-prod
     SignupComponent,
     SigninComponent,
     EditProductsComponent,
+    SliderComponent,
+    MenuComponent,
+    ProductAppleComponent,
+    ProductSamsungComponent,
+    ProductXiaomiOppoComponent,
+    SocialMediaComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +66,7 @@ import { EditProductsComponent } from './modules/product/edit-products/edit-prod
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,40 +1,47 @@
 import { AuthService } from './../../../services/auth/auth.service';
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from "@angular/forms";
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ISignin } from 'src/app/interface/auth';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss']
+  styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent {
-  constructor(private FormBuilder: FormBuilder, private AuthService: AuthService) { }
+  constructor(
+    private FormBuilder: FormBuilder,
+    private AuthService: AuthService,
+    private toastr: ToastrService,
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   userForm = this.FormBuilder.group({
     email: ['', [Validators.required]],
     password: ['', [Validators.required, Validators.minLength(6)]],
-  })
+  });
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onHandleSignin() {
-    if (this.userForm.invalid) { return; }
+    if (this.userForm.invalid) {
+      return;
+    }
     const user: ISignin = {
       email: this.userForm.value.email || '',
       password: this.userForm.value.password || '',
-    }
-    console.log(2);
-
-
-    console.log(user);
-
-
+    };
     this.AuthService.signin(user).subscribe((data) => {
-      alert("Đăng nhập thành công");
-      console.log(data);
-
-    })
+      if (data.success) {
+        this.toastr.success(data.message);
+        this.AuthService.saveUserToSessionStorage(data.user);
+        this.AuthService.saveAccessToken(data.accessToken);
+        this.cdr.detectChanges();
+        this.router.navigateByUrl('');
+      }
+    });
   }
 }
