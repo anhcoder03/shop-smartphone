@@ -44,15 +44,16 @@
               <span class="text-sm">{{ dataUser?.fullname }}</span>
             </div>
             <div
-              class="absolute z-50 flex flex-col w-full bg-white top-full text-primary"
+              class="absolute z-50 flex flex-col min-w-[200px] bg-white top-full text-primary"
             >
-              <a routerLink="/me" class="menu-dropdown">Tài khoản của tôi</a>
               <a
                 *ngIf="dataUser.admin === true"
                 routerLink="/admin"
                 class="menu-dropdown"
                 >Trang quản trị</a
               >
+              <a routerLink="/me" class="menu-dropdown">Tài khoản của tôi</a>
+
               <a routerLink="/change-password" class="menu-dropdown"
                 >Thay đổi mật khẩu</a
               >

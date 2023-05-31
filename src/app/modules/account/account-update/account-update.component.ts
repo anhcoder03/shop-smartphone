@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { IUser } from 'src/app/interface/auth';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { UploadImageService } from 'src/app/services/uploadImage/upload-image.service';
 
 @Component({
   selector: 'app-account-update',
@@ -16,8 +17,16 @@ export class AccountUpdateComponent {
     private FormBuilder: FormBuilder,
     private AuthService: AuthService,
     private toastr: ToastrService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private uploadImageService: UploadImageService
   ) {}
+  publicId: string = '';
+  image: any = [];
+  listImage: any = [];
+  imageUrl: any;
+  imageDefault: string =
+    'https://images.unsplash.com/photo-1678720131679-14475f693cd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60';
+  imageRegex: any;
   userForm = this.FormBuilder.group({
     fullname: [
       '',
@@ -45,19 +54,48 @@ export class AccountUpdateComponent {
       if (_id) {
         this.AuthService.getOneAccount(_id).subscribe((data) => {
           this.user = data.data;
-          console.log(data.data);
-
           this.userForm.patchValue({
             _id: this.user._id,
             fullname: this.user.fullname,
             email: this.user.email,
-            avatar: this.user.avatar,
             admin: !!this.user.admin,
             status: this.user.status,
           });
+          if (this.user.avatar !== this.imageDefault) {
+            this.image.url = this.user.avatar;
+            this.imageRegex = /\/([^\/]+)\.png/.exec(this.image.url);
+            this.publicId =
+              this.imageRegex?.length > 0 ? this.imageRegex[1] : '';
+          }
         });
       }
     });
+  }
+  handleSelectImage = (e: any) => {
+    const files = e.target.files;
+    if (files.length === 0) {
+      return;
+    }
+    const formData = new FormData();
+
+    for (let i = 0; i < files.length; i++) {
+      formData.append('image', files[i]);
+    }
+    this.uploadImageService.handleUploadImage(formData).subscribe((data) => {
+      this.listImage = data;
+      this.image = this.listImage.urls[0];
+      this.userForm.patchValue({ avatar: this.image.url });
+      console.log(this.image);
+    });
+  };
+  handleDeteleImage() {
+    this.uploadImageService
+      .handleDeleteImage(this.publicId)
+      .subscribe((data: Data) => {
+        if (data.success) {
+          this.image = [];
+        }
+      });
   }
   onHandleSubmit() {
     if (this.userForm.invalid) return;
@@ -65,7 +103,7 @@ export class AccountUpdateComponent {
       _id: this.user._id,
       fullname: this.userForm.value.fullname || '',
       email: this.userForm.value.email || '',
-      avatar: this.userForm.value.avatar || '',
+      avatar: this.image.url,
       admin: !!this.userForm.value.admin,
       status: this.userForm.value.status || '',
     };
@@ -78,3 +116,7 @@ export class AccountUpdateComponent {
     });
   }
 }
+type Data = {
+  success?: boolean;
+  message?: string;
+};
