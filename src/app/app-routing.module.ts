@@ -16,6 +16,7 @@ import { SigninComponent } from './pages/accounts/signin/signin.component';
 import { SignupComponent } from './pages/accounts/signup/signup.component';
 import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
 import { AccountListComponent } from './modules/account/account-list/account-list.component';
+import { AccountUpdateComponent } from './modules/account/account-update/account-update.component';
 
 const routes: Routes = [
   {
@@ -55,7 +56,7 @@ const routes: Routes = [
         path: 'account',
         children: [
           { path: '', component: AccountListComponent },
-          // { path: ':id/edit', component: AccountUpdateComponent },
+          { path: ':id/edit', component: AccountUpdateComponent },
         ],
       },
     ],
