@@ -32,6 +32,7 @@ import { ProductSamsungComponent } from './components/product-samsung/product-sa
 import { ProductXiaomiOppoComponent } from './components/product-xiaomi-oppo/product-xiaomi-oppo.component';
 import { SocialMediaComponent } from './components/social-media/social-media.component';
 import { AccountListComponent } from './modules/account/account-list/account-list.component';
+import { AccountUpdateComponent } from './modules/account/account-update/account-update.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AccountListComponent } from './modules/account/account-list/account-lis
     ProductXiaomiOppoComponent,
     SocialMediaComponent,
     AccountListComponent,
+    AccountUpdateComponent,
   ],
   imports: [
     BrowserModule,
