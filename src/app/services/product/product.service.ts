@@ -8,8 +8,8 @@ import { IProduct } from 'src/app/interface/product';
 export class ProductService {
   constructor(private http: HttpClient) {}
   Api_Url = 'http://localhost:3333/api/v1';
-  getAllProduct(): Observable<IData> {
-    return this.http.get(`${this.Api_Url}/getProducts`);
+  getAllProduct(page: number): Observable<IData> {
+    return this.http.get(`${this.Api_Url}/getProducts?page=${page}`);
   }
   getOneproduct(_id: string): Observable<any> {
     return this.http.get(`${this.Api_Url}/getProduct/${_id}`);
@@ -41,4 +41,5 @@ interface IData {
   message?: string;
   data?: IProduct | IProduct[];
   totalPage?: number;
+  totalProduct?: number;
 }
