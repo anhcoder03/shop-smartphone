@@ -15,6 +15,7 @@ import { EditCategoryComponent } from './modules/category/edit-category/edit-cat
 import { SigninComponent } from './pages/accounts/signin/signin.component';
 import { SignupComponent } from './pages/accounts/signup/signup.component';
 import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
+import { AccountListComponent } from './modules/account/account-list/account-list.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,13 @@ const routes: Routes = [
           { path: '', component: ListProductComponent },
           { path: 'add', component: AddProductComponent },
           { path: ':id/edit', component: EditProductsComponent },
+        ],
+      },
+      {
+        path: 'account',
+        children: [
+          { path: '', component: AccountListComponent },
+          // { path: ':id/edit', component: AccountUpdateComponent },
         ],
       },
     ],

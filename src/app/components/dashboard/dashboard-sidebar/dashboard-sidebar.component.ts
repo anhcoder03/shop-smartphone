@@ -29,8 +29,8 @@ export class DashboardSidebarComponent {
       classIcon: 'fa-solid fa-comment',
     },
     {
-      title: 'User',
-      path: 'user',
+      title: 'Account',
+      path: 'account',
       classIcon: 'fa-regular fa-user',
     },
     {
