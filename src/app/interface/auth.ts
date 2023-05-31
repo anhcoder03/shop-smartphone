@@ -19,13 +19,13 @@ export interface ISignup {
 
 export interface IUser {
   message?: string;
-  _id?: string,
-  fullname: string,
-  email: string,
-  password?: string,
-  avata?: string,
-  admin?: boolean,
-  success?: boolean,
-  data?: any,
-  status?: string
+  _id?: string;
+  fullname: string;
+  email: string;
+  password?: string;
+  avatar?: string;
+  admin?: boolean;
+  success?: boolean;
+  data?: any;
+  status?: string;
 }
