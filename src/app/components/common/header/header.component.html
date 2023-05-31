@@ -26,20 +26,41 @@
       <div class="flex items-center text-white gap-x-5">
         <div class="pr-5 border-r border-white">
           <a
-            *ngIf="!user"
+            *ngIf="!dataUser"
             routerLink="/signin"
             class="flex items-center gap-x-2"
             ><span>Đăng nhập</span> <span><i class="fa fa-user"></i></span
           ></a>
-          <h2 *ngIf="user" class="flex items-center gap-x-3">
-            <span>Xin chào:</span>
-            <img
-              src="{{ user?.avatar }}"
-              class="w-[40px] h-[40px] object-cover rounded-full"
-              alt=""
-            />
-            <span>{{ user?.fullname }}</span>
-          </h2>
+          <div
+            *ngIf="dataUser"
+            class="relative flex items-center cursor-pointer dropdown"
+          >
+            <div class="flex items-center gap-x-2">
+              <img
+                src="{{ dataUser?.avatar }}"
+                class="w-[40px] h-[40px] object-cover rounded-full"
+                alt=""
+              />
+              <span class="text-sm">{{ dataUser?.fullname }}</span>
+            </div>
+            <div
+              class="absolute z-50 flex flex-col w-full bg-white top-full text-primary"
+            >
+              <a routerLink="/me" class="menu-dropdown">Tài khoản của tôi</a>
+              <a
+                *ngIf="dataUser.admin === true"
+                routerLink="/admin"
+                class="menu-dropdown"
+                >Trang quản trị</a
+              >
+              <a routerLink="/change-password" class="menu-dropdown"
+                >Thay đổi mật khẩu</a
+              >
+              <a routerLink="/signin" (click)="logOut()" class="menu-dropdown"
+                >Đăng xuât</a
+              >
+            </div>
+          </div>
         </div>
 
         <div>

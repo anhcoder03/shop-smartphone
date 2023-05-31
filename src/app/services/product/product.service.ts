@@ -23,16 +23,16 @@ export class ProductService {
   getAllcategories(): Observable<any> {
     return this.http.get(`${this.Api_Url}/get-all-category`);
   }
-  UpdateProduct(product: IProduct): Observable<IData> {
-    return this.http.put(
-      `${this.Api_Url}/update-product/${product._id}`,
-      product
-    );
-  }
+
   updateProduct(product: IProduct): Observable<IProduct> {
     return this.http.put<IProduct>(
       `${this.Api_Url}/update-product/${product._id}`,
       product
+    );
+  }
+  getProductByCategory(categoryId: string) {
+    return this.http.get(
+      `${this.Api_Url}/getProducts?categoryId=${categoryId}`
     );
   }
 }

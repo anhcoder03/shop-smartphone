@@ -128,3 +128,12 @@ td {
 .owl-next {
   right: 10px;
 }
+.dropdown:hover .menu-dropdown {
+  display: block;
+}
+.menu-dropdown {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  display: none;
+  font-size: 14px;
+}
