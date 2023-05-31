@@ -1,0 +1,49 @@
+<div class="mb-10">
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-3xl font-bold">Quản lý tài khoản</h1>
+    </div>
+    <div>
+      <a routerLink="/admin/account/add"
+        class="block px-5 py-3 text-white bg-blue-500 rounded-lg hover:bg-blue-400">Thêm tài khoản</a>
+    </div>
+  </div>
+</div>
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Ảnh</th>
+        <th>Tên tài khoản</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="users && users.length">
+      <tr class="py-3" *ngFor="let user of users; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img src="{{ user.avata }}" class="w-[60px] h-[80px] object-cover" />
+        </td>
+        <td class="flex-1 min-w-[300px]">{{ user.fullname }}</td>
+        <td class="flex-1 min-w-[300px]">{{ user.email }}</td>
+        <td class="flex-1 min-w-[300px]">{{ user.password }}</td>
+        <td class="flex-1 min-w-[300px]">{{ user.admin }}</td>
+        <td class="flex-1 min-w-[300px]">{{ user.status }}</td>
+        <td>
+          <div class="flex items-center text-white gap-x-4">
+            <button class="px-4 py-2 bg-red-500 rounded-lg hover:bg-red-400" (click)="onHandleRemove(user._id)">
+              <i class="fa fa-trash"></i>
+            </button>
+            <a class="px-3 py-2 text-white bg-gray-500 rounded-md hover:bg-green-600 deley-100"
+              [routerLink]="['/admin/account',user._id, 'edit']"><i class="fa-solid fa-pen-to-square"></i></a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
