@@ -24,4 +24,11 @@ export class AuthService {
   saveAccessToken(accessToken: any): void {
     localStorage.setItem('accessToken', JSON.stringify(accessToken));
   }
+  isAuthen(): Boolean {
+    const token = localStorage.getItem('accessToken');
+    if (!token || token === '' || token === undefined) {
+      return false;
+    }
+    return true;
+  }
 }
