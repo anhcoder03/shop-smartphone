@@ -22,8 +22,11 @@ export interface IUser {
   fullname: string;
   email: string;
   password: string;
-  image: string;
+  avata: string;
   success?: boolean;
   message?: string;
   avatar: string;
+  data?: any,
+  status?: string,
+  admin?: boolean,
 }

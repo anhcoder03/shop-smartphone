@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ISignin, ISignup } from 'src/app/interface/auth';
+import { ISignin, ISignup, IUser } from 'src/app/interface/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -24,11 +24,21 @@ export class AuthService {
   saveAccessToken(accessToken: any): void {
     localStorage.setItem('accessToken', JSON.stringify(accessToken));
   }
-  isAuthen(): Boolean {
-    const token = localStorage.getItem('accessToken');
-    if (!token || token === '' || token === undefined) {
-      return false;
-    }
-    return true;
+
+  // ADMIN
+  getAllAccount(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`${this.API_URL}/get-all-user`);
+  }
+  UpdateAccount(user: IUser): Observable<IUser> {
+    return this.http.put<IUser>(
+      `${this.API_URL}/update-user/${user._id}`,
+      user
+    );
+  }
+  DeleteAccount(_id: string): Observable<any> {
+    return this.http.delete(`${this.API_URL}/remove-user/${_id}`);
+  }
+  getOneAccount(_id: string): Observable<IUser> {
+    return this.http.get<IUser>(`${this.API_URL}/getUser/${_id}`);
   }
 }

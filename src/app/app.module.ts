@@ -31,6 +31,7 @@ import { ProductAppleComponent } from './components/product-apple/product-apple.
 import { ProductSamsungComponent } from './components/product-samsung/product-samsung.component';
 import { ProductXiaomiOppoComponent } from './components/product-xiaomi-oppo/product-xiaomi-oppo.component';
 import { SocialMediaComponent } from './components/social-media/social-media.component';
+import { AccountListComponent } from './modules/account/account-list/account-list.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { SocialMediaComponent } from './components/social-media/social-media.com
     ProductSamsungComponent,
     ProductXiaomiOppoComponent,
     SocialMediaComponent,
+    AccountListComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,4 +73,4 @@ import { SocialMediaComponent } from './components/social-media/social-media.com
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
