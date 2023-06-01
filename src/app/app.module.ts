@@ -34,6 +34,7 @@ import { ProductXiaomiOppoComponent } from './components/product-xiaomi-oppo/pro
 import { SocialMediaComponent } from './components/social-media/social-media.component';
 import { AccountListComponent } from './modules/account/account-list/account-list.component';
 import { AccountUpdateComponent } from './modules/account/account-update/account-update.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { AccountUpdateComponent } from './modules/account/account-update/account
     SocialMediaComponent,
     AccountListComponent,
     AccountUpdateComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
