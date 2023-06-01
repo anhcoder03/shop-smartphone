@@ -35,6 +35,12 @@ export class ProductService {
       `${this.Api_Url}/getProducts?categoryId=${categoryId}`
     );
   }
+  getProductById(_id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(
+      `${this.Api_Url}/getProduct/${_id}`
+
+    )
+  }
 }
 interface IData {
   success?: boolean;

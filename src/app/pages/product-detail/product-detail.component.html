@@ -1,1 +1,267 @@
-<p>product-detail works!</p>
+<div class="container w-full max-w-screen-xl mx-auto px-4">
+    <!-- hiển thị chi tiết sản phẩm -->
+    <div   class="sc-dmXXqC iylvBh">
+        <div class="product-wrapper p-[30px] flex">
+            <div class="product-image w-[45%] flex justify-center items-center">
+                <img class="block max-w-md	"
+                    src="https://firebasestorage.googleapis.com/v0/b/book-store-46a35.appspot.com/o/images%2Fb_a-tr_c---ph_p-y-600.jpg?alt=media&amp;token=8d3097e8-0ec7-45a8-972e-9eb5b3902225"
+                    alt="Ghi Chép Pháp Y - Những Cái Chết Bí Ẩn"></div>
+            <div class="product-content">
+                <h2 class="product-title text-[24px] font-semibold	mb-[30px]"></h2>
+                <h4 class="product-info mt-[10px] flex items-center gap-[30px]"><span>Tác giả:</span><span class="product-author font-medium">Lưu Hiểu Huy</span></h4>
+                <h4 class="product-info mt-[10px] flex items-center gap-[30px]"><span>Năm xuất bản: </span><span class="product-year">2023</span></h4>
+                <div class="flex items-center mt-3"><i
+                        class="fa-sharp fa-solid fa-star text-base  text-[#faaf00]"></i><i
+                        class="fa-sharp fa-solid fa-star text-base  text-[#faaf00]"></i><i
+                        class="fa-sharp fa-solid fa-star text-base  text-[#faaf00]"></i><i
+                        class="fa-sharp fa-solid fa-star text-base  text-[#faaf00]"></i><span
+                        class="text-2xl  text-[#faaf00]">☆</span><span>(4 đánh giá)</span></div>
+                <p class="product-info mt-[10px] flex items-center gap-[30px]"><span>Giá: </span><span class="product-price text-[24px] font-semibold text-[#E1464C]">105.000 đ</span></p>
+                <div class="sc-hIPCAL drUGgW">
+                    <h4 class="quantity-title mt-5 mb-5 text-[18px] font-semibold	">Số lượng: </h4>
+                    <div class="quantity-wrapper flex items-center gap-6 px-4 py-2 rounded-md border border-gray-400 max-w-xs justify-between">
+                        <button class="quantity-button text-[24px] font-semibold text-gray-500" (click)="decrease()">-</button>
+                        <span
+                            class="quantity-value">{{ quantity }}</span>
+                        <button class="quantity-button text-[24px] font-semibold text-gray-500" (click)="increase()">+</button>
+                    </div>
+                </div>
+                <div class="addToCart mt-[60px] flex gap-[50px]">
+                    <button type="button" height="50px" class="sc-ifyqMZ drQTAk btn-add bg-primary from-blue-500 to-blue-300 text-white hover:from-blue-700 hover:to-blue-500 cursor-pointer px-5 h-16 rounded-md text-lg font-semibold ">Thêm vào giỏ
+                        hàng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end  -->
+    <!-- mô tả sản phẩm -->
+    <div class="sc-iuOPfm dpUZMZ p-6 mt-6 shadow-md rounded-xl ">
+        <div class="MuiTabs-root css-orq8zk border-b border-gray-300 overflow-hidden min-h-12 flex w-[45%]">
+            <div class="MuiTabs-scroller MuiTabs-fixed css-1anid1y" style="overflow: hidden; margin-bottom: 0px;">
+                <div aria-label="basic tabs example" class="MuiTabs-flexContainer css-k008qs" role="tablist">
+                    <button
+                        class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected css-1q2h7u5"
+                        tabindex="0" type="button" role="tab" aria-selected="true" id="simple-tab-0"
+                        aria-controls="simple-tabpanel-0">MÔ TẢ
+                        <span
+                            class="MuiTouchRipple-root css-w0pj6f">
+                        </span>
+                        </button>
+                        <button
+                        class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary css-1q2h7u5" tabindex="-1"
+                        type="button" role="tab" aria-selected="false" id="simple-tab-1"
+                        aria-controls="simple-tabpanel-1">ĐÁNH GIÁ
+                        <span
+                            class="MuiTouchRipple-root css-w0pj6f">
+                        </span>
+                    </button>
+                </div>
+                <span
+                    class="MuiTabs-indicator css-ttwr4n" style="left: 0px; width: 90px;">
+                </span>
+            </div>
+        </div>
+        <div role="tabpanel" id="simple-tabpanel-0" aria-labelledby="simple-tab-0">
+            <div class="MuiBox-root css-0">
+                <div class="mt-10">
+                    <div class="sc-dJGLCQ hYrSaX">
+                        <div class="entry-content">
+                            <p><strong style="color: red;">GHI CHÉP PHÁP Y - NHỮNG CÁI CHẾT BÍ ẨN -</strong></p>
+                            <p><em style="background-color: rgb(255, 255, 255); color: rgb(51, 51, 51);">Làm cách nào để
+                                    một “xác chết lên tiếng”? -&nbsp;</em><span
+                                    style="background-color: rgb(255, 255, 255); color: rgb(51, 51, 51);">đó
+                                    là&nbsp;</span><em
+                                    style="background-color: rgb(255, 255, 255); color: rgb(51, 51, 51);">công việc của
+                                    bác sĩ pháp y.&nbsp;</em></p>
+                            <p class="ql-align-justify">“Ghi chép pháp y - Những cái chết bí ẩn” là cuốn sách nằm trong
+                                hệ liệt với “Pháp y Tần Minh” - bộ tiểu thuyết nổi đình đám của xứ Trung đã được chuyển
+                                thể thành series phim. Cuốn sách tổng hợp những vụ án có thật, được viết bởi bác sĩ pháp
+                                y Lưu Hiểu Huy - người có 15 năm kinh nghiệm và từng mổ xẻ hơn 800 tử thi.&nbsp;</p>
+                            <p class="ql-align-justify">Trải qua 15 câu chuyện kinh hoàng, cuốn sách sẽ đưa bạn bước vào
+                                hiện trường của những vụ án man rợ như: xác chết phi tang dưới cánh đồng ngô, thi thể
+                                thiếu nữ không lành lặn, xác chết nhầy nhụa đang bị giòi bọ đục khoét hay một thi thể co
+                                cứng trong màng bọc nilon…lần theo những dấu vết, ghép lại sự thật từ những mảnh vụn thi
+                                thể, nguyên nhân của cái chết sẽ dần được hé mở.</p>
+                            <p class="ql-align-justify">Mỗi vụ án đều là một ẩn số, hiện trường vụ án bao gồm cả xác
+                                chết chính là chiếc chìa khóa để truy tìm hung thủ ngay cả khi nó không còn nguyên vẹn.
+                                Vậy làm cách để các bác sĩ pháp y có thể xác định thương tật, các dấu hiệu cơ thể bị xâm
+                                hại? Cuốn sách này sẽ trình bày những kiến thức chuyên môn và quy trình xử lý vụ án, từ
+                                hiện trường vụ án đến đài giải phẫu, xét nghiệm nội tạng, phân tích chất độc… từng bước
+                                tìm ra bí mật ẩn giấu sau mỗi tử thi, phơi bày những manh mối liên quan đến tội ác con
+                                người và lỗ hổng của xã hội.</p>
+                            <p class="ql-align-justify">Không chỉ thuật lại những vụ án và các phương pháp pháp y, cuốn
+                                sách còn chứa đựng cảm xúc của tác giả đối với nghề nghiệp và sự méo mó của bản chất con
+                                người. Chẳng hạn, một đứa trẻ bệnh nặng phải đau đớn đến thế nào khi bị người nhà đem ra
+                                làm công cụ để đòi bồi thường? Cuốn sách sẽ phơi bày những góc khuất của xã hội, những
+                                hành vi thủ ác, sự biến chất và mất nhân tính của một bộ phận con người trong xã hội.
+                            </p>
+                            <p class="ql-align-justify">Nếu bạn tò mò muốn biết cách đánh giá tuổi của người chết dựa
+                                trên mức độ mòn răng? Hay cách dùng một con giòi từ người chết để suy ra thời điểm chính
+                                xác của vụ án giết người?&nbsp;Hy vọng cuốn sách này sẽ cho bạn trải nghiệm khó quên về
+                                nghề pháp y.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" hidden="" id="simple-tabpanel-1" aria-labelledby="simple-tab-1"></div>
+    </div>
+    <!-- end mô tả sản phẩm -->
+    <!-- <div class="sc-fLsdZI irrbxJ mt-10 shadow-md rounded-xl p-6">
+        <h1 class="heading text-2xl font-bold mb-5">Sản Phẩm Tương Tự</h1>
+        <div class="mt-6 slider_popular">
+            <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
+                        style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a aria-current="page" class="active"
+                                    href="/product-detail/ghi-chep-phap-y-nhung-cai-chet-bi-an"><img
+                                        src="https://firebasestorage.googleapis.com/v0/b/book-store-46a35.appspot.com/o/images%2Fb_a-tr_c---ph_p-y-600.jpg?alt=media&amp;token=8d3097e8-0ec7-45a8-972e-9eb5b3902225"
+                                        class="image" alt="ghi-chep-phap-y-nhung-cai-chet-bi-an"></a></div>
+                            <div class="product-content"><a aria-current="page" class="active"
+                                    href="/product-detail/ghi-chep-phap-y-nhung-cai-chet-bi-an">
+                                    <p class="product-title">Ghi Chép Pháp Y - Những Cái Chết Bí Ẩn</p>
+                                </a>
+                                <p class="product-price">105.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1"
+                        style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/chua-kip-lon-dja-truong-thanh"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/9/7/9726a839a056959e94aba54e7c1ff0d6_1.jpg"
+                                        class="image" alt="chua-kip-lon-dja-truong-thanh"></a></div>
+                            <div class="product-content"><a class=""
+                                    href="/product-detail/chua-kip-lon-dja-truong-thanh">
+                                    <p class="product-title">Chưa Kịp Lớn Đã Trưởng Thành</p>
+                                </a>
+                                <p class="product-price">54.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="2" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/nguoi-don-dep-hien-truong-an-mang"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/n/g/ng_i-d_n-d_p-hi_n-tr_ng-_n-m_ngb_a-1.jpg"
+                                        class="image" alt="nguoi-don-dep-hien-truong-an-mang"></a></div>
+                            <div class="product-content"><a class=""
+                                    href="/product-detail/nguoi-don-dep-hien-truong-an-mang">
+                                    <p class="product-title">Người Dọn Dẹp Hiện Trường Án Mạng</p>
+                                </a>
+                                <p class="product-price">65.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="3" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/nguoi-dua-dieu-tai-ban-2018"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_179515_1.jpg"
+                                        class="image" alt="nguoi-dua-dieu-tai-ban-2018"></a></div>
+                            <div class="product-content"><a class="" href="/product-detail/nguoi-dua-dieu-tai-ban-2018">
+                                    <p class="product-title">Người Đua Diều (Tái Bản 2018)</p>
+                                </a>
+                                <p class="product-price">76.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="4" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/toi-thay-hoa-vang-tren-c-xanh-ban-in-moi-2018"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/8/9/8934974158448.jpg"
+                                        class="image" alt="toi-thay-hoa-vang-tren-c-xanh-ban-in-moi-2018"></a></div>
+                            <div class="product-content"><a class=""
+                                    href="/product-detail/toi-thay-hoa-vang-tren-c-xanh-ban-in-moi-2018">
+                                    <p class="product-title">Tôi Thấy Hoa Vàng Trên Cỏ Xanh (Bản In Mới - 2018)</p>
+                                </a>
+                                <p class="product-price">93.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="5" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/su-im-lang-cua-bay-cuu-tai-ban-2019"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_180812.jpg"
+                                        class="image" alt="su-im-lang-cua-bay-cuu-tai-ban-2019"></a></div>
+                            <div class="product-content"><a class=""
+                                    href="/product-detail/su-im-lang-cua-bay-cuu-tai-ban-2019">
+                                    <p class="product-title">Sự Im Lặng Của Bầy Cừu (Tái Bản 2019)</p>
+                                </a>
+                                <p class="product-price">83.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="6" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class="" href="/product-detail/rung-nauy-(tai-ban-2021)"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_240307.jpg"
+                                        class="image" alt="rung-nauy-(tai-ban-2021)"></a></div>
+                            <div class="product-content"><a class="" href="/product-detail/rung-nauy-(tai-ban-2021)">
+                                    <p class="product-title">Rừng Nauy (Tái Bản 2021)</p>
+                                </a>
+                                <p class="product-price">111.999 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="7" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/toi-dang-song-cuoc-doi-tuyet-voi-nhat"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/t/_/t_i-_ang-s_ng-cu_c-_i-tuy_t-v_i-nh_tb_a-600.jpg"
+                                        class="image" alt="toi-dang-song-cuoc-doi-tuyet-voi-nhat"></a></div>
+                            <div class="product-content"><a class=""
+                                    href="/product-detail/toi-dang-song-cuoc-doi-tuyet-voi-nhat">
+                                    <p class="product-title"> Tôi Đang Sống Cuộc Đời Tuyệt Vời Nhất</p>
+                                </a>
+                                <p class="product-price">79.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="8" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/con-chim-xanh-biec-bay-ve-tang-kem-6-postcard"><img
+                                        src="https://cdn0.fahasa.com/media/catalog/product/b/i/biamem.jpg" class="image"
+                                        alt="con-chim-xanh-biec-bay-ve-tang-kem-6-postcard"></a></div>
+                            <div class="product-content"><a class=""
+                                    href="/product-detail/con-chim-xanh-biec-bay-ve-tang-kem-6-postcard">
+                                    <p class="product-title"> Con Chim Xanh Biếc Bay Về - Tặng Kèm 6 Postcard</p>
+                                </a>
+                                <p class="product-price">105.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="9" style="width: 228px; margin-right: 10px;">
+                        <div class="sc-ktwOSD jwuymr">
+                            <div class="product-image"><a class=""
+                                    href="/product-detail/nhu-doa-hoa-suong-tang-kem-chu-ky-tac-gia-qua-tang-son"><img
+                                        src="https://firebasestorage.googleapis.com/v0/b/book-store-46a35.appspot.com/o/images%2Fz4202827955619_ceb1e7543dc23488b4c2605fbedcbf79_2.jpg?alt=media&amp;token=5baf692e-a013-4096-8657-1b7dc494ccbb"
+                                        class="image" alt="nhu-doa-hoa-suong-tang-kem-chu-ky-tac-gia-qua-tang-son"></a>
+                            </div>
+                            <div class="product-content"><a class=""
+                                    href="/product-detail/nhu-doa-hoa-suong-tang-kem-chu-ky-tac-gia-qua-tang-son">
+                                    <p class="product-title">Như Đóa Hoa Sương - Tặng Kèm Chữ Ký Tác Giả + Quà Tặng Son
+                                    </p>
+                                </a>
+                                <p class="product-price">105.000 đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div
+                    class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+                        class="swiper-pagination-bullet"></span></div>
+            </div>
+        </div>
+    </div> -->
+</div>
