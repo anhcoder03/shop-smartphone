@@ -35,6 +35,8 @@ import { SocialMediaComponent } from './components/social-media/social-media.com
 import { AccountListComponent } from './modules/account/account-list/account-list.component';
 import { AccountUpdateComponent } from './modules/account/account-update/account-update.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { NewsPageComponent } from './pages/news-page/news-page.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     SocialMediaComponent,
     AccountListComponent,
     AccountUpdateComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ContactPageComponent,
+    NewsPageComponent
   ],
   imports: [
     BrowserModule,

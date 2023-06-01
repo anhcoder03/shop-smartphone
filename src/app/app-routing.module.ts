@@ -17,6 +17,8 @@ import { SignupComponent } from './pages/accounts/signup/signup.component';
 import { EditProductsComponent } from './modules/product/edit-products/edit-products.component';
 import { AccountListComponent } from './modules/account/account-list/account-list.component';
 import { AccountUpdateComponent } from './modules/account/account-update/account-update.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { NewsPageComponent } from './pages/news-page/news-page.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,8 @@ const routes: Routes = [
     children: [
       { path: '', component: HomepageComponent },
       { path: 'product', component: ProductPageComponent },
+      { path: 'contact', component: ContactPageComponent },
+      { path: 'news', component: NewsPageComponent },
       { path: 'product/:slug', component: ProductDetailComponent },
       { path: 'signin', component: SigninComponent },
       { path: 'signup', component: SignupComponent },
