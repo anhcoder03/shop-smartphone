@@ -13,6 +13,7 @@ export class ProductSamsungComponent {
     this.productService
       .getProductByCategory('647330335e0d5b35f0588f44')
       .subscribe((data) => {
+        console.log(data)
         this.data = data;
         this.products = this.data.data;
       });
